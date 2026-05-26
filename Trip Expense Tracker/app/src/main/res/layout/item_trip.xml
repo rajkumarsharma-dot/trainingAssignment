@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/card_border_light">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_trip_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manali Vacation"
+                android:textColor="@color/text_primary_light"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_trip_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_badge_active"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="Active"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_trip_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="Road trip with college friends"
+            android:textColor="@color/text_secondary_light"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="12dp"
+            android:background="@color/divider" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_trip_members_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 Members"
+                android:textColor="@color/primary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_parentEnd="true"
+                android:orientation="vertical"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/tv_trip_total_expenses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹12,500.00"
+                    android:textColor="@color/text_primary_light"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_trip_budget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Budget: ₹25,000"
+                    android:textColor="@color/text_secondary_light"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/pb_trip_budget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:trackThickness="6dp"
+            app:trackCornerRadius="3dp"
+            app:indicatorColor="@color/primary"
+            app:trackColor="@color/primary_light"
+            android:progress="50" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

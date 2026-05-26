@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Trip Expense Tracker</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_trips">My Trips</string>
+    <string name="title_profile">Profile</string>
+</resources>

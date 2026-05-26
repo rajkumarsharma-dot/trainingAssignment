@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Animated/gradient logo card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_logo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:cardCornerRadius="60dp"
+            app:cardElevation="8dp"
+            app:strokeWidth="0dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_circle_avatar">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="✈️"
+                    android:textSize="50sp" />
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tv_splash_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="SplitTrip"
+            android:textColor="@color/primary"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_splash_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Group expense splitting, simplified."
+            android:textColor="@color/text_secondary_light"
+            android:textSize="16sp" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:indeterminate="true"
+            app:indicatorColor="@color/secondary"
+            app:trackThickness="4dp" />
+
+    </LinearLayout>
+</RelativeLayout>

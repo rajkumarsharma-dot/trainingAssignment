@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light">
+
+    <!-- Top curved glassmorphism header card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_details_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="4dp"
+        app:strokeWidth="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_circle_avatar"
+            android:padding="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/btn_back"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Back"
+                    app:tint="@color/white"
+                    app:srcCompat="@android:drawable/ic_menu_revert" />
+
+                <TextView
+                    android:id="@+id/tv_details_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/btn_back"
+                    android:layout_marginStart="8dp"
+                    android:layout_centerVertical="true"
+                    android:text="Manali Vacation"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/btn_analytics"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Analytics"
+                    app:tint="@color/white"
+                    app:srcCompat="@android:drawable/ic_menu_compass" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_details_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Road trip with college friends"
+                android:textColor="@color/secondary_light"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="12dp"
+                android:background="@color/white"
+                android:alpha="0.2" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TOTAL EXPENSES"
+                        android:textColor="@color/secondary_light"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_details_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹12,500.00"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_parentEnd="true"
+                    android:orientation="vertical"
+                    android:gravity="end">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BUDGET STATUS"
+                        android:textColor="@color/secondary_light"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_details_budget"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹25,000"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/pb_details_budget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:trackThickness="6dp"
+                app:trackCornerRadius="3dp"
+                app:indicatorColor="@color/accent"
+                app:trackColor="@color/primary_dark"
+                android:progress="50" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Custom Capsule Tab Selectors -->
+    <LinearLayout
+        android:id="@+id/ll_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/card_details_header"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_tab_expenses"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Expenses"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            android:backgroundTint="@color/primary_light"
+            android:textColor="@color/primary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_tab_balances"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Balances"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            android:backgroundTint="@android:color/transparent"
+            android:textColor="@color/text_secondary_light" />
+    </LinearLayout>
+
+    <!-- Content Sections -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_tab_bar">
+
+        <!-- Expenses Container -->
+        <FrameLayout
+            android:id="@+id/fl_expenses_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_details_expenses"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingBottom="88dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_expenses_empty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="32dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💸"
+                    android:textSize="50sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="No Expenses Logged"
+                    android:textColor="@color/text_primary_light"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Tap the '+' button below to add expenses!"
+                    android:textColor="@color/text_secondary_light"
+                    android:textSize="13sp"
+                    android:gravity="center" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Balances and Settlement Container -->
+        <LinearLayout
+            android:id="@+id/fl_balances_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- Balances Recycler -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_details_balances"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingBottom="8dp" />
+
+            <!-- Settlement Ledger Title -->
+            <TextView
+                android:id="@+id/tv_settlement_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:text="Optimal Settlement Paths"
+                android:textColor="@color/text_primary_light"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- Optimal Debt Settlements Card list -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="80dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/card_border_light">
+
+                <TextView
+                    android:id="@+id/tv_settlements_ledger"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:text="Everyone is settled up!"
+                    android:textColor="@color/text_secondary_light"
+                    android:textSize="13sp"
+                    android:lineSpacingExtra="4dp" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/details_loader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            app:indicatorColor="@color/primary" />
+    </FrameLayout>
+
+    <!-- FAB for adding expenses (Visible only on Expenses tab) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_expense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:contentDescription="Add Expense"
+        app:backgroundTint="@color/secondary"
+        app:tint="@color/white"
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:visibility="visible" />
+
+    <!-- Action Buttons for adding members and settling up (Visible only on Balances tab) -->
+    <LinearLayout
+        android:id="@+id/ll_balances_actions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@color/background_light"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add_member"
+            style="@style/Widget.App.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="Add Friend" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_settle_up"
+            style="@style/Widget.App.Button.Secondary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Settle Up" />
+    </LinearLayout>
+
+</RelativeLayout>

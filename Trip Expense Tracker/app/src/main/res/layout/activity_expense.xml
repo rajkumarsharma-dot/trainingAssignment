@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/background_light">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Top Header Navigation -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+
+            <ImageButton
+                android:id="@+id/btn_expense_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Back"
+                app:tint="@color/primary"
+                app:srcCompat="@android:drawable/ic_menu_revert" />
+
+            <TextView
+                android:id="@+id/tv_expense_header_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/btn_expense_back"
+                android:layout_marginStart="8dp"
+                android:layout_centerVertical="true"
+                android:text="Add Expense"
+                android:textColor="@color/primary"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <!-- General Inputs Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/card_border_light">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Title Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_exp_title"
+                    style="@style/Widget.App.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Expense Title (e.g. Dinner, Fuel)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_exp_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Amount Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_exp_amount"
+                    style="@style/Widget.App.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Amount (₹)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_exp_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Category Selector -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Category"
+                    android:textColor="@color/text_secondary_light"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinner_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/card_border_spinner" />
+
+                <!-- Payer Selector -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Paid By"
+                    android:textColor="@color/text_secondary_light"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinner_payer"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/card_border_spinner" />
+
+                <!-- Notes / Description -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_exp_notes"
+                    style="@style/Widget.App.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="Notes (Optional)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_exp_notes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:maxLines="2"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Splitting Options Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/card_border_light">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Split Type"
+                    android:textColor="@color/primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Equal vs Custom buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_split_equal"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Equally"
+                        app:cornerRadius="8dp"
+                        android:backgroundTint="@color/primary_light"
+                        android:textColor="@color/primary" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_split_custom"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="Customly"
+                        app:cornerRadius="8dp"
+                        android:backgroundTint="@android:color/transparent"
+                        android:textColor="@color/text_secondary_light" />
+                </LinearLayout>
+
+                <!-- Equal split summary label -->
+                <TextView
+                    android:id="@+id/tv_equal_share_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Each member's share: ₹0.00"
+                    android:textColor="@color/text_secondary_light"
+                    android:textSize="14sp"
+                    android:textStyle="italic"
+                    android:visibility="visible" />
+
+                <!-- Custom Split list container -->
+                <LinearLayout
+                    android:id="@+id/ll_custom_split_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="16dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Assign Shares Manually"
+                        android:textColor="@color/text_primary_light"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_split_members"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        android:layout_marginTop="8dp" />
+
+                    <!-- Custom Split sum status labels -->
+                    <TextView
+                        android:id="@+id/tv_split_sum_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Sum: ₹0.00 | Remaining: ₹0.00"
+                        android:textColor="@color/error"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Save Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save_expense"
+            style="@style/Widget.App.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="16dp"
+            android:text="Save Expense" />
+
+    </LinearLayout>
+</ScrollView>
