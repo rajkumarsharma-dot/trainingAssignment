@@ -1,11 +1,11 @@
-# Justification — Side-by-Side Comparison Framework
-### Trip Expense Tracker Android App | RLHF Evaluation Report
+# Justification — 
+### Trip Expense Tracker Android App
 
 ---
 
 ## Final Verdict
 
-**Winner: Response A (Gemini AI)**
+**Winner: Response A**
 
 > Response A is better than Response B.
 > Response A delivers a genuine production-grade Android blueprint with compilable Java code and real Firebase integration logic. Response B is a high-level feature checklist with non-functional placeholder snippets that cannot be built upon directly.
@@ -14,7 +14,7 @@
 
 ## Side-by-Side Analysis
 
-| Dimension | Response A (Gemini AI) | Response B (ChatGPT) |
+| Dimension | Response A | Response B |
 |---|---|---|
 | **Correctness** | Working Java classes with real Firestore queries, proper ViewHolder binding, balance-sheet math in `ExpenseCalculator`. Minor typo: `@id/` instead of `R.id/`. | Placeholder snippets (`balance = paidAmount - shareAmount;`) with no class wrappers, missing imports — non-compilable in isolation. |
 | **Relevance** | Stays strictly within Java + XML + Firebase scope. Every section maps directly to a buildable layer. | Lists features outside scope (UPI, QR payment, voice entry) without any implementation, causing scope creep. |
@@ -28,8 +28,8 @@
 
 ## Strengths and Weaknesses
 
-### Response A (Gemini AI)
-| ✅ Strengths | ❌ Weaknesses |
+### Response A
+| Strengths | Weaknesses |
 |---|---|
 | Real compilable Java code | Minor typo: `@id/` instead of `R.id/` |
 | Working expense split engine | No fragment-based navigation |
@@ -37,8 +37,8 @@
 | Clean MVVM architecture | No dark mode or advanced features |
 | Offline Firestore support | Standard creativity — no innovation |
 
-### Response B (ChatGPT)
-| ✅ Strengths | ❌ Weaknesses |
+### Response B
+| Strengths | Weaknesses |
 |---|---|
 | Broader feature scope | Code is non-compilable — no class wrappers |
 | Modern BottomNav + Fragments | Zero implementation for listed features |
@@ -47,12 +47,3 @@
 | Clean deliverables checklist | Pseudo-code disguised as real Java |
 
 ---
-
-## Summary
-
-```
-Winner : Response A (Gemini AI)   →   4.14 / 5
-Loser  : Response B (ChatGPT)     →   3.14 / 5
-Margin : +1.0 point (significant gap)
-Likert : 6 — Response A clearly better
-```
