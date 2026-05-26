@@ -7,8 +7,7 @@
 
 **Winner: Response A**
 
-> Response A is better than Response B.
-> Response A delivers a genuine production-grade Android blueprint with compilable Java code and real Firebase integration logic. Response B is a high-level feature checklist with non-functional placeholder snippets that cannot be built upon directly.
+> Response A is better than Response B. Response A correctly delivers a production-grade Android blueprint with compilable Java code, outperforming on Correctness, Completeness, and Helpfulness. It provides a working ExpenseCalculator with real balance-sheet math, a complete TripAdapter with proper ViewHolder binding, and a functional Firestore listener using whereArrayContains("members", currentUserId) — all copy-paste ready for a developer. Response B, by contrast, ignores the core requirement of a production-ready implementation and delivers a feature wishlist with non-compilable placeholders like balance = paidAmount - shareAmount; — no class wrapper, no imports, no integration — making it practically useless as a starting codebase.
 
 ---
 
